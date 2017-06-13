@@ -1,5 +1,26 @@
 # Teacher
 
+## Configuración de la BD
+``` shell
+    sudo -i -u postgres
+    psql
+    CREATE USER admin;
+    ALTER USER admin PASSWORD 'hol1234';
+    ALTER USER admin WITH SUPERUSER;
+```
+## Configuración de variables de entorno
+``` shell
+    cp .env.dist .env
+    export $(cat .env | xargs)
+```
+## Agregar hook de pre-commit para pruebas unitarias y credo
+
+``` shell
+    cp pre-commit.dist .git/hooks/pre-commit
+    chmod +x .git/hooks/pre-commit
+```
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
