@@ -51,8 +51,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :teacher, Teacher.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "admin",
-  password: "hol1234",
+  username: System.get_env("DBUSER"),
+  password: System.get_env("DBPASSWORD"),
   database: "teacher_dev",
   hostname: "localhost",
   pool_size: 10
