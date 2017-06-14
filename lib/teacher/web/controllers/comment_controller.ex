@@ -18,7 +18,7 @@ defmodule Teacher.Web.CommentController do
       {:ok, comment} ->
         conn
         |> put_flash(:info, "Comment created successfully.")
-        |> redirect(to: comment_path(conn, :show, comment))
+        |> redirect(to: comment_path(:show, comment))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -42,7 +42,7 @@ defmodule Teacher.Web.CommentController do
       {:ok, comment} ->
         conn
         |> put_flash(:info, "Comment updated successfully.")
-        |> redirect(to: comment_path(conn, :show, comment))
+        |> redirect(to: comment_path(:show, comment))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", comment: comment, changeset: changeset)
     end

@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :teacher, Teacher.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("DBUSER"),
+  password: System.get_env("DBPASSWORD"),
   database: "teacher_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

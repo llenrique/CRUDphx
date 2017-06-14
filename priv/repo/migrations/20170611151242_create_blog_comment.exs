@@ -4,7 +4,7 @@ defmodule Teacher.Repo.Migrations.CreateTeacher.Blog.Comment do
   def change do
     create table(:blog_comments) do
       add :body, :text
-      add :post_id, references(:posts, on_delete: :delete_all)
+      add :post_id, references(:blog_posts, on_delete: :delete_all)
 
       timestamps()
     end
